@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Romantis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #FFC6C6, #FFC6C6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .panel {
+            width: 100px;
+            height: 70px;
+            display: inline-block;
+            margin: 0 10px;
+            border-radius: 10px;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .panel-red {
+            background-color: #ff4757;
+        }
+
+        .panel-green {
+            background-color: #2ed573;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>MAAFIN AKU DONG!!</h1>
+        <div style="display: flex; justify-content: center;">
+            <div class="panel panel-red" id="panelRed">TIDAK!!</div>
+            <div class="panel panel-green" id="panelGreen">IYAAAA</div>
+        </div>
+    </div>
+
+    <script>
+        // Ambil elemen tombol
+        const panelRed = document.getElementById('panelRed');
+        const panelGreen = document.getElementById('panelGreen');
+
+        // Tombol merah kabur
+        panelRed.addEventListener('click', function() {
+            const x = Math.random() * (window.innerWidth - panelRed.offsetWidth);
+            const y = Math.random() * (window.innerHeight - panelRed.offsetHeight);
+            
+            panelRed.style.position = 'absolute';
+            panelRed.style.left = `${x}px`;
+            panelRed.style.top = `${y}px`;
+        });
+
+        // Tombol hijau pindah ke halaman lain
+        panelGreen.addEventListener('click', function() {
+            window.location.href = "utama2.html"; // ganti dengan halaman tujuanmu
+        });
+    </script>
+</body>
+</html>
